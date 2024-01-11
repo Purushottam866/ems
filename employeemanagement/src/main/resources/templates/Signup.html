@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .registration-form {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(9, 9, 9, 0.1);
+      padding: 20px;
+      width: 400px;
+      /* font-size: 30px; */
+    }
+
+    .registration-form h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    .form-group button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .form-group button:hover {
+      background-color: #45a049;
+    }
+
+    .gender-form {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .gender-form label {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .gender-form input {
+      margin-right: 5px;
+    }
+
+    .gender-form input,
+    .gender-form label {
+      display: inline-block;
+    }
+
+    .gender-form button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 5px;
+      font-size: 16px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+     .fail{
+    	color:red;
+    }
+  </style>
+</head>
+<body>
+
+<h1 class="fail" th:text="${fail}"></h1>	
+
+<form action="/employee/signup" method="post">
+<div class="registration-form">
+  <h2> Sign-up </h2>
+  <form action="#" method="post">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+   
+    <div class="form-group">
+      <label for="password">Conform password:</label>
+      <input type="password" id="password" name="conpassword" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Phone:</label>
+      <input type="password" id="password" name="phone" required>
+    </div>
+
+    
+    <div class="gender-form">
+      <label for="male">Gender <br> <br>
+        <input type="radio" id="male" name="gender" value="male"> Male
+      </label>
+      <label for="female">
+        <input type="radio" id="female" name="gender" value="female"> Female
+      </label>
+      <label for="other">
+        <input type="radio" id="other" name="gender" value="other"> Other
+      </label>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">DOB</label>
+        <input type="date" id="password" name="dob" required>
+      </div>
+
+    <div class="form-group">
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</div>
+  </form>
+</body>
+</html>
